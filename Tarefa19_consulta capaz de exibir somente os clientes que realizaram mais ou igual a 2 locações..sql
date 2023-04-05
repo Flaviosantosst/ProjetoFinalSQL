@@ -1,0 +1,10 @@
+-- SQLite
+--consulta capaz de exibir somente os clientes que realizaram mais ou igual a 2 locações.
+SELECT * FROM LOCATIONS;
+SELECT * FROM CUSTOMERS;
+
+SELECT * FROM CUSTOMERS
+
+JOIN LOCATIONS ON (CUSTOMERS.ID = LOCATIONS.CUSTOMER_ID)
+GROUP BY CUSTOMERS.ID
+HAVING COUNT(LOCATIONS.ID) >= 2;
